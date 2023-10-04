@@ -15,6 +15,7 @@ spec:
       creationTimestamp: null
       labels:
         app: nginx
+        app1: test-name
     spec:
       containers:
       - image: nginx
