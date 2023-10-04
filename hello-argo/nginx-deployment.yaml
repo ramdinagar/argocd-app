@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   finalizers:
-    - testfinalizer
+  - dbpe7601
   labels:
     app: nginx
   name: nginx
