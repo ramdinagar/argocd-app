@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-nginx
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: apps
+    server: https://kubernetes.default.svc
+  source:
+    path: hello-argo
+    repoURL: https://github.com/ramdinagar/argocd-app.git
+    targetRevision: HEAD
+  sources: []
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - ApplyOutOfSyncOnly=true
+    - CreateNamespace=true
+  info:
+  - name: description
+    value: Sample argo app
